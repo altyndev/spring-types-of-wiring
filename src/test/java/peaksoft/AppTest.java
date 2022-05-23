@@ -18,7 +18,10 @@ public class AppTest {
 
     @Test
     public void mainTest() {
-        String text = "На свете есть океан , на океане остров , на острове дерево , на дереве заяц , в зайце утка , в утке яйцо , в яйце иголка , смерть Кощея на игле :(";
+        String text = "There is an ocean in the world, there is an island in the ocean," +
+                " there is an oak on that island, a chest is buried under the oak," +
+                " a hare in the chest, a duck in the hare, an egg in the duck," +
+                " a needle in the egg, Koshchei's death";
 
         KoscheiTheDeathless koscheiTheDeathless =
                 applicationContext.getBean(KoscheiTheDeathless.class);
@@ -26,7 +29,7 @@ public class AppTest {
         String testText = koscheiTheDeathless.getRulesByDeth();
 
         if (!testText.contains(text) && testText.length() <= text.length()) {
-            Assert.fail("Тест провален, не корректная связь бинов. Итоговая фраза не верна.");
+            Assert.fail("Test failed, incorrect bin association. The final sentence is not correct.");
         }
     }
 }
